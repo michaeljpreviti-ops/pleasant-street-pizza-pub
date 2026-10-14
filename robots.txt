@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pleasant-street-pizza-pub.vercel.app/sitemap.xml
