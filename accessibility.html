@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accessibility — Pleasant Street Pizza Pub</title>
+<meta name="description" content="How Pleasant Street Pizza Pub's website works for people with disabilities, what we tested, what we know still needs work, and how to tell us about a problem.">
+<meta name="theme-color" content="#1a1412">
+<link rel="canonical" href="https://pleasant-street-pizza-pub.vercel.app/accessibility">
+<meta name="robots" content="index, follow">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/images/og.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Inter:wght@400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="topbar__in">
+    <a class="brand" href="/">
+      <span class="brand__mark" aria-hidden="true">PSP</span>
+      <span class="brand__txt">
+        <span class="brand__name">Pleasant Street</span>
+        <span class="brand__sub">Pizza Pub</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Main">
+      <a href="/#menu">Menu</a>
+      <a href="/#reviews">Reviews</a>
+      <a href="/#visit">Visit</a>
+    </nav>
+
+    <div class="topbar__cta">
+      <a class="tel" href="tel:+13525055777">
+        <svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path fill="currentColor" d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1l-2.3 2.2z"/></svg>
+        <span class="tel__num">(352) 505-5777</span>
+      </a>
+      <a class="btn btn--order" href="/#order">Order Now</a>
+    </div>
+  </div>
+</header>
+
+<main id="main" class="doc">
+  <div class="wrap">
+
+    <p class="eyebrow eyebrow--dark">Accessibility</p>
+    <h1 class="doc__h1">Our commitment to an accessible website</h1>
+
+    <p class="doc__lede">
+      We want everyone to be able to see our menu, read our hours and place an
+      order — including people who use screen readers, navigate by keyboard,
+      enlarge text, or rely on captions and high contrast.
+    </p>
+
+    <section aria-labelledby="standard">
+      <h2 id="standard">The standard we build to</h2>
+      <p>
+        The Americans with Disabilities Act does not set a technical standard for
+        websites, and no one can "certify" a site as ADA compliant. What the
+        Department of Justice points to is the
+        <strong>Web Content Accessibility Guidelines (WCAG)</strong>, and its 2024
+        rule for state and local governments adopts <strong>WCAG 2.1 Level AA</strong>.
+        We build this site to that same level, and we follow the plain-language
+        practices the DOJ publishes at
+        <a href="https://www.ada.gov/resources/web-guidance/" target="_blank" rel="noopener">ada.gov</a>.
+      </p>
+      <p class="doc__note">
+        As a restaurant open to the public, we are a "public accommodation" under
+        Title III of the ADA. We treat accessibility as ongoing work, not a box we
+        ticked once.
+      </p>
+    </section>
+
+    <section aria-labelledby="checklist">
+      <h2 id="checklist">What the DOJ asks for, and what we did</h2>
+      <p>These are the practices listed in the DOJ's web accessibility guidance, in their order, with what we do about each.</p>
+
+      <ol class="checks">
+        <li>
+          <h3>Keep enough contrast between text and background</h3>
+          <p>Every text and background pair on the site was measured. All of them
+          meet or beat the 4.5:1 ratio WCAG asks for normal text — most are well
+          above it. The headline over the storefront photo sits on a darkened
+          overlay, and the page also sets a dark fallback colour behind it so the
+          text stays readable if the photo never loads.</p>
+        </li>
+        <li>
+          <h3>Don't rely on colour alone</h3>
+          <p>Nothing on the site is communicated by colour by itself. The star
+          ratings carry a text label as well as the gold stars — a screen reader
+          announces "4.8 out of 5 stars". Hours say "Closed" in words rather than
+          greying a row out.</p>
+        </li>
+        <li>
+          <h3>Write short, descriptive alt text for images</h3>
+          <p>Every photograph has alt text describing what is in it. Decorative
+          items — the arrows on the ordering links, the phone icon, the logo
+          monogram — are hidden from screen readers so they are not read out as
+          noise.</p>
+        </li>
+        <li>
+          <h3>Add accurate captions to videos</h3>
+          <p>There is no video or audio on this site. If we add any, it will ship
+          with captions.</p>
+        </li>
+        <li>
+          <h3>Label form fields and explain errors clearly</h3>
+          <p>This site has no forms. Ordering happens on Toast or 352 Delivery —
+          see the known limitations below — and you can always order by phone
+          instead.</p>
+        </li>
+        <li>
+          <h3>Support browser zoom and text resizing</h3>
+          <p>The layout is built in relative units, so it reflows rather than
+          breaks. It stays usable at 200% zoom and down to a 320-pixel-wide
+          screen without side-to-side scrolling, and it survives increased letter,
+          word and line spacing.</p>
+        </li>
+        <li>
+          <h3>Build proper headings into the page layout</h3>
+          <p>One H1, then H2s for each section and H3s beneath them, in order and
+          never skipped. The page uses real landmarks — header, navigation, main,
+          footer — so screen reader users can jump straight to a section. The
+          hours are a real data table with row headers.</p>
+        </li>
+        <li>
+          <h3>Support keyboard navigation, not just the mouse</h3>
+          <p>Everything you can click, you can reach with the Tab key and activate
+          with Enter, in the order it appears on screen. A "Skip to content" link
+          is the first thing you reach, and whatever has keyboard focus is marked
+          with a thick two-tone ring that stays visible on both the light and the
+          dark parts of the page.</p>
+        </li>
+        <li>
+          <h3>Use automated checkers <em>and</em> manual review</h3>
+          <p>The DOJ is explicit that a clean automated report does not mean a site
+          is accessible. We ran <a href="https://wave.webaim.org/" target="_blank" rel="noopener">WAVE</a>
+          by WebAIM, then went through the page by hand: tabbing the whole page,
+          checking it at 200% zoom and at phone width, and measuring every colour
+          pair against the WCAG formula rather than trusting a glance.</p>
+        </li>
+        <li>
+          <h3>Give people a way to report accessibility problems</h3>
+          <p>Below, and on every page in the footer.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="extras">
+      <h2 id="extras">Other things we did</h2>
+      <ul class="plain">
+        <li>Motion is reduced automatically if your device asks for that.</li>
+        <li>The map is in a labelled frame, so it is announced rather than appearing as an unnamed region.</li>
+        <li>Links say where they go — no bare "click here" — and the ones that leave the site are marked.</li>
+        <li>Tap targets are large enough to hit comfortably, and the phone number is a single tap on a phone.</li>
+        <li>The page is marked as English so screen readers use the right pronunciation.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="limits">
+      <h2 id="limits">What we know still needs work</h2>
+      <p>We would rather tell you this than let you run into it.</p>
+      <ul class="plain">
+        <li>
+          <strong>The ordering pages are not ours.</strong> "Order Now" hands you to
+          <strong>Toast</strong>, and "Order Delivery" to <strong>352 Delivery</strong>.
+          Those are run by other companies and we do not control how accessible they
+          are. If either one gets in your way, <strong>call us at (352) 505-5777</strong>
+          and we will take your order on the phone, at the same prices.
+        </li>
+        <li>
+          <strong>The map is Google's.</strong> The embedded map comes from Google
+          Maps. Our address is written out in text right next to it, so you never
+          need the map to find us.
+        </li>
+        <li>
+          <strong>Review text is quoted as written.</strong> Guest reviews are
+          reproduced from Google in the reviewer's own words, so spelling and
+          punctuation are theirs.
+        </li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="report" class="report">
+      <h2 id="report">Tell us about a problem</h2>
+      <p>
+        If any part of this site — or anything at the restaurant — is hard to use,
+        we want to hear about it. Tell us what you were trying to do and what got
+        in the way, and we will fix it or find you another way to get it done.
+      </p>
+      <p class="report__cta">
+        <a class="btn btn--order btn--lg" href="tel:+13525055777">Call (352) 505-5777</a>
+      </p>
+      <p class="doc__note">
+        Or stop in: 603 NW 6th St, Gainesville, FL 32601. We aim to respond within
+        two business days. If you would rather raise it with the Department of
+        Justice, their ADA Information Line is 800-514-0301 (TTY 1-833-610-1264).
+      </p>
+    </section>
+
+    <section aria-labelledby="status">
+      <h2 id="status">Status of this statement</h2>
+      <dl class="status">
+        <dt>Standard targeted</dt><dd>WCAG 2.1 Level AA</dd>
+        <dt>How it was assessed</dt><dd>WAVE (WebAIM) plus manual keyboard, zoom, reflow and contrast testing</dd>
+        <dt>Last reviewed</dt><dd><time datetime="2026-10-15">15 October 2026</time></dd>
+        <dt>Prepared by</dt><dd>Craft Studio, for Pleasant Street Pizza Pub</dd>
+      </dl>
+      <p class="doc__note">
+        We review this page whenever the site changes, and at least once a year.
+        Conformance is a goal we work at continuously — if you find something that
+        falls short of it, the section above is how to tell us.
+      </p>
+    </section>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <div>
+      <p class="foot__name">Pleasant Street Pizza Pub</p>
+      <p>603 NW 6th St, Gainesville, FL 32601<br>(352) 505-5777</p>
+    </div>
+    <div class="foot__links">
+      <a href="/">Home</a>
+      <a href="/#menu">Menu</a>
+      <a href="/accessibility">Accessibility</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
